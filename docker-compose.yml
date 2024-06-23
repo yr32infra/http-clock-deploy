@@ -1,0 +1,40 @@
+services:
+  httpclock:
+    image: ghcr.io/yanorei32/http-clock:0.2.1
+    hostname: httpclock
+    container_name: httpclock__httpclock
+
+    restart: unless-stopped
+
+    deploy:
+      resources:
+        limits:
+          memory: 128m
+
+    networks:
+      - default
+
+  cloudflared:
+    image: cloudflare/cloudflared:2024.6.1
+    hostname: cloudflared
+    container_name: httpclock__cloudflared
+
+    restart: unless-stopped
+
+    environment:
+      TUNNEL_LOGFILE: /dev/stdout
+
+    command: tunnel run --token ${TUNNEL_TOKEN}
+    user: root
+
+    deploy:
+      resources:
+        limits:
+          memory: 128m
+
+    networks:
+      default:
+
+networks:
+  default:
+    name: httpclock__default
