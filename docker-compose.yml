@@ -1,6 +1,6 @@
 services:
   httpclock:
-    image: ghcr.io/yanorei32/http-clock:0.2.1
+    image: ghcr.io/yanorei32/http-clock:0.2.2
     hostname: httpclock
     container_name: httpclock__httpclock
 
