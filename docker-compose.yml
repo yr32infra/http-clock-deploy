@@ -9,7 +9,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 512m
+          memory: 128m
 
     networks:
       - default
@@ -30,7 +30,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 128m
+          memory: 512m
 
     networks:
       default:
