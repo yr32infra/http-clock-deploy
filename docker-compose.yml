@@ -1,6 +1,6 @@
 services:
   httpclock:
-    image: ghcr.io/yanorei32/http-clock:0.3.2
+    image: ghcr.io/yanorei32/http-clock:0.4.0
     hostname: httpclock
     container_name: httpclock__httpclock
 
@@ -9,7 +9,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 128m
+          memory: 1024m
 
     networks:
       - default
@@ -30,7 +30,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 512m
+          memory: 4096m
 
     networks:
       default:
