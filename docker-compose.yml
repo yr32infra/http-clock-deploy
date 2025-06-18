@@ -15,7 +15,7 @@ services:
       - default
 
   cloudflared:
-    image: cloudflare/cloudflared:2025.6.0
+    image: cloudflare/cloudflared:2025.6.1
     hostname: cloudflared
     container_name: httpclock__cloudflared
 
